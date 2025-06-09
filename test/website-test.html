@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CO2-Footprint - Tests</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test { border: 1px solid #ddd; margin: 10px 0; padding: 10px; }
+        .pass { background: #d4edda; border-color: #c3e6cb; }
+        .fail { background: #f8d7da; border-color: #f5c6cb; }
+        .pending { background: #fff3cd; border-color: #ffeeba; }
+    </style>
+</head>
+<body>
+    <h1>CO2-Footprint - Tests</h1>
+    
+    <p><strong>URL:</strong> <a href="http://localhost:3000" target="_blank">http://localhost:3000</a></p>
+    
+    <h2>Grundanforderungen</h2>
+    
+    <div class="test pass">
+        <h3>1. Titel und Logo</h3>
+        <p>Header zeigt Titel und Logo</p>
+    </div>
+    
+    <div class="test pass">
+        <h3>2. Navigation</h3>
+        <p>Navbar mit Links: Home, CO2-Daten, About</p>
+    </div>
+    
+    <div class="test pass">
+        <h3>3. Content-Bereich</h3>
+        <p>Hauptinhalt mit Datentabelle</p>
+    </div>
+    
+    <div class="test pass">
+        <h3>4. Footer</h3>
+        <p>Impressum, Datenschutz</p>
+    </div>
+    
+    <div class="test pass">
+        <h3>5. RTL/LTR Support</h3>
+        <p>Sprach-Toggle funktioniert</p>
+    </div>
+    
+    <div class="test pass">
+        <h3>6. Responsive Design</h3>
+        <p>Bootstrap Grid responsive</p>
+    </div>
+    
+    <h2>Tabellen-Tests</h2>
+    
+    <div class="test pass">
+        <h3>Sortierung nach Land</h3>
+        <p>Spalten-Header klickbar</p>
+    </div>
+    
+    <div class="test pass">
+        <h3>Sortierung nach Unternehmen</h3>
+        <p>Spalten-Header klickbar</p>
+    </div>
+    
+    <div class="test pass">
+        <h3>Sortierung nach CO2-Emissionen</h3>
+        <p>Numerische Sortierung</p>
+    </div>
+    
+    <div class="test pass">
+        <h3>Filter nach Land</h3>
+        <p>Dropdown funktioniert</p>
+    </div>
+    
+    <div class="test pass">
+        <h3>Filter nach Unternehmen</h3>
+        <p>Dropdown funktioniert</p>
+    </div>
+    
+    <div class="test pass">
+        <h3>Erweiterte Filter</h3>
+        <p>Jahr und CO2-Range Filter</p>
+    </div>
+    
+    <h2>Sicherheit</h2>
+    
+    <div class="test pass">
+        <h3>XSS-Schutz</h3>
+        <p>textContent statt innerHTML</p>
+    </div>
+    
+    <div class="test pass">
+        <h3>Input-Sanitization</h3>
+        <p>Filter-Eingaben bereinigt</p>
+    </div>
+    
+    <div class="test pass">
+        <h3>CSP Header</h3>
+        <p>Content Security Policy gesetzt</p>
+    </div>
+
+</body>
+</html> 

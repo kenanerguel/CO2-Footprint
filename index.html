@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CO2-Emissionsdaten von Ländern und Unternehmen">
+    
+    <!-- Security Headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; script-src 'self' https://cdn.jsdelivr.net;">
+    
+    <title>CO2-Footprint | Emissionsdaten</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Header mit globaler Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <!-- Logo und Titel -->
+                <a class="navbar-brand d-flex align-items-center" href="#home">
+                    <img src="assets/logo.svg" alt="CO2-Footprint Logo" width="40" height="40" class="me-2">
+                    <span class="fw-bold">CO2-Footprint</span>
+                </a>
+                
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!-- Globale Navigation -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#data">CO2-Daten</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Über uns</a>
+                        </li>
+
+                    </ul>
+                    
+                    <!-- RTL/LTR Toggle (lokales Menü) -->
+                    <div class="navbar-nav ms-3">
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Sprache
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#" onclick="setDirection('ltr')">Deutsch (LTR)</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="setDirection('rtl')">العربية (RTL)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="bg-light py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold text-success">CO2-Emissionsdaten</h1>
+                        <p class="lead">Emissionsdaten von Ländern und Unternehmen.</p>
+                        <a href="#data" class="btn btn-success btn-lg">Daten anzeigen</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bg-success bg-gradient d-flex align-items-center justify-content-center rounded" 
+                             style="height: 300px; color: white;">
+                            <div class="text-center">
+                                <h4>CO2-Footprint</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CO2-Daten Section -->
+        <section id="data" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Emissionsdaten</h2>
+                
+                <!-- Filter Controls -->
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <select class="form-select" id="countryFilter">
+                            <option value="">Alle Länder</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-select" id="companyFilter">
+                            <option value="">Alle Unternehmen</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Suchen...">
+                    </div>
+                </div>
+                
+                <!-- Data Table -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover" id="co2Table">
+                        <thead class="table-success">
+                            <tr>
+                                <th scope="col" class="sortable" data-sort="country">
+                                    Land <i class="sort-icon"></i>
+                                </th>
+                                <th scope="col" class="sortable" data-sort="company">
+                                    Unternehmen <i class="sort-icon"></i>
+                                </th>
+                                <th scope="col" class="sortable" data-sort="emissions">
+                                    CO2-Emissionen (Tonnen) <i class="sort-icon"></i>
+                                </th>
+                                <th scope="col" class="sortable" data-sort="year">
+                                    Jahr <i class="sort-icon"></i>
+                                </th>
+                                <th scope="col" class="sortable" data-sort="sector">
+                                    Sektor <i class="sort-icon"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Data wird durch JavaScript geladen -->
+                            <tr>
+                                <td colspan="5" class="text-center">
+                                    <div class="spinner-border text-success" role="status">
+                                        <span class="visually-hidden">Lade Daten...</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-light py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2>Info</h2>
+                        <p>Emissionsdaten von Ländern und Unternehmen aus offiziellen Quellen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer mit rechtlichen Hinweisen -->
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>CO2-Footprint</h5>
+                    <p class="small">Emissionsdaten</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Rechtliche Hinweise</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#impressum" class="text-light">Impressum</a></li>
+                        <li><a href="#datenschutz" class="text-light">Datenschutz</a></li>
+                        <li><a href="#nutzungsbedingungen" class="text-light">Nutzungsbedingungen</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="small mb-0">&copy; 2024 CO2-Footprint</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="js/main.js"></script>
+</body>
+</html> 

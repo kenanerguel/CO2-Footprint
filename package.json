@@ -1,0 +1,41 @@
+{
+  "name": "co2-footprint-webapp",
+  "version": "1.0.0",
+  "description": "Simple web application for visualizing CO2 emissions data using HTML5 + Bootstrap 5 + Vanilla JS",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=/",
+    "test": "mocha test/**/*.test.js",
+    "test:watch": "mocha test/**/*.test.js --watch",
+    "lint": "eslint js/*.js --fix",
+    "build": "echo 'No build step needed for vanilla JS'",
+    "deploy": "gh-pages -d ."
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "mocha": "^10.2.0",
+    "chai": "^4.3.10",
+    "eslint": "^8.53.0",
+    "gh-pages": "^6.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/CO2-Footprint.git"
+  },
+  "keywords": [
+    "co2",
+    "emissions",
+    "climate",
+    "environment",
+    "bootstrap",
+    "vanilla-js",
+    "html5"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  }
+} 

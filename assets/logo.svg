@@ -1,0 +1,12 @@
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+  <!-- Erde/Kreis -->
+  <circle cx="20" cy="20" r="18" fill="#198754" stroke="#fff" stroke-width="2"/>
+  
+  <!-- CO2 Text -->
+  <text x="20" y="17" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="8" font-weight="bold">CO</text>
+  <text x="20" y="27" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="6">2</text>
+  
+  <!-- Kleine Blätter/Umwelt-Symbol -->
+  <path d="M8 12 Q12 8 16 12 Q12 16 8 12" fill="#90EE90" opacity="0.8"/>
+  <path d="M24 12 Q28 8 32 12 Q28 16 24 12" fill="#90EE90" opacity="0.8"/>
+</svg> 
