@@ -85,7 +85,7 @@ const CO2App = {
         
         const isRTL = rtlLanguages.some(lang => userLanguage.startsWith(lang));
         if (isRTL) {
-            this.setDirection('rtl');
+            setDirection('rtl');
         }
     },
     
