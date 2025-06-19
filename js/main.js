@@ -11,27 +11,15 @@ const CO2App = {
     
     // Initialisierung der Anwendung
     init() {
-        console.log('CO2-Footprint App startet...');
-        
-        // Event Listeners einrichten
         this.setupEventListeners();
-        
-        // RTL/LTR Support initialisieren
         this.initializeDirectionSupport();
-        
-        // CO2-Daten laden
         this.loadCO2Data();
-        
-        // Smooth Scrolling für Navigation
         this.setupSmoothScrolling();
-        
-        // Navigation setup
         this.setupNavigation();
     },
     
     // Event Listeners für die gesamte App
     setupEventListeners() {
-        // Filter Event Listeners
         document.getElementById('countryFilter').addEventListener('change', () => {
             this.applyFilters();
         });
@@ -41,14 +29,12 @@ const CO2App = {
         });
         
         document.getElementById('searchInput').addEventListener('input', (e) => {
-            // Debouncing für bessere Performance
             clearTimeout(this.searchTimeout);
             this.searchTimeout = setTimeout(() => {
                 this.applyFilters();
             }, 300);
         });
         
-        // Navbar Link Aktiv-Status
         this.setupNavigation();
     },
     
@@ -56,7 +42,6 @@ const CO2App = {
     setupNavigation() {
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
         
-        // Scroll Spy für aktive Navigation
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const scrollPos = window.scrollY + 100;
@@ -95,17 +80,13 @@ const CO2App = {
     
     // RTL/LTR Direction Support initialisieren
     initializeDirectionSupport() {
-        // Browser-Sprache erkennen
         const userLanguage = navigator.language || navigator.userLanguage;
         const rtlLanguages = ['ar', 'he', 'ur', 'fa', 'ps', 'sd'];
         
-        // Standard Direction setzen
         const isRTL = rtlLanguages.some(lang => userLanguage.startsWith(lang));
         if (isRTL) {
             this.setDirection('rtl');
         }
-        
-        console.log(`Sprache erkannt: ${userLanguage}, RTL: ${isRTL}`);
     },
     
     // CO2-Daten von JSON-Datei laden
@@ -113,7 +94,6 @@ const CO2App = {
         try {
             this.showLoading(true);
             
-            // Fetch CO2 Data
             const response = await fetch('data/co2-data.json');
             if (!response.ok) {
                 throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -122,13 +102,8 @@ const CO2App = {
             this.data = await response.json();
             this.filteredData = [...this.data];
             
-            // Filter-Optionen populieren
             this.populateFilterOptions();
-            
-            // Tabelle rendern
             this.renderTable();
-            
-            console.log(`${this.data.length} CO2-Datensätze geladen`);
             
         } catch (error) {
             console.error('Fehler beim Laden der CO2-Daten:', error);
@@ -146,7 +121,6 @@ const CO2App = {
         const countrySelect = document.getElementById('countryFilter');
         const companySelect = document.getElementById('companyFilter');
         
-        // Länder-Optionen
         countries.forEach(country => {
             const option = document.createElement('option');
             option.value = country;
@@ -154,7 +128,6 @@ const CO2App = {
             countrySelect.appendChild(option);
         });
         
-        // Unternehmen-Optionen
         companies.forEach(company => {
             const option = document.createElement('option');
             option.value = company;
@@ -180,10 +153,7 @@ const CO2App = {
             return matchesCountry && matchesCompany && matchesSearch;
         });
         
-        // Tabelle neu rendern
         this.renderTable();
-        
-        console.log(`Filter angewendet: ${this.filteredData.length} von ${this.data.length} Einträgen`);
     },
     
     // Tabelle rendern
@@ -267,11 +237,10 @@ const CO2App = {
     sanitizeInput(input) {
         if (typeof input !== 'string') return '';
         
-        // Gefährliche Zeichen entfernen
         return input
             .replace(/[<>\"'&]/g, '')
             .trim()
-            .substring(0, 100); // Max 100 Zeichen
+            .substring(0, 100);
     }
 };
 
@@ -284,15 +253,12 @@ function setDirection(direction) {
         html.setAttribute('dir', direction);
         html.setAttribute('lang', direction === 'rtl' ? 'ar' : 'de');
         
-        // Navbar Brand Text ändern
         const brandText = document.querySelector('.navbar-brand span');
         if (direction === 'rtl') {
             brandText.textContent = 'بصمة الكربون';
         } else {
             brandText.textContent = 'CO2-Footprint';
         }
-        
-        console.log(`Direction: ${direction}`);
     }
 }
 
