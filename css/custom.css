@@ -2,7 +2,7 @@
 
 /* RTL (Right-to-Left) Support */
 [dir="rtl"] {
-    text-align: right;
+    text-align: right !important;
 }
 
 [dir="rtl"] .navbar-nav {
@@ -11,18 +11,40 @@
 }
 
 [dir="rtl"] .navbar-brand {
-    margin-right: 0;
-    margin-left: auto;
+    margin-right: 0 !important;
+    margin-left: auto !important;
 }
 
 [dir="rtl"] .table th,
 [dir="rtl"] .table td {
-    text-align: right;
+    text-align: right !important;
 }
 
 [dir="rtl"] .dropdown-menu {
-    right: 0;
-    left: auto;
+    right: 0 !important;
+    left: auto !important;
+}
+
+[dir="rtl"] .container {
+    direction: rtl !important;
+}
+
+[dir="rtl"] .navbar {
+    direction: rtl !important;
+}
+
+[dir="rtl"] .navbar-collapse {
+    text-align: right !important;
+}
+
+[dir="rtl"] .ms-auto {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+}
+
+[dir="rtl"] .ms-3 {
+    margin-left: 0 !important;
+    margin-right: 1rem !important;
 }
 
 /* Sort Icons für Tabellen */
