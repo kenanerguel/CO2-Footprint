@@ -18,7 +18,7 @@ const CO2App = {
         this.setupNavigation();
     },
     
-    // Event Listeners für die gesamte App
+    // Event-Listener für die gesamte App
     setupEventListeners() {
         document.getElementById('countryFilter').addEventListener('change', () => {
             this.applyFilters();
@@ -38,7 +38,7 @@ const CO2App = {
         this.setupNavigation();
     },
     
-    // Navigation Active States
+    // Navigation aktive Zustände
     setupNavigation() {
         const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
         
@@ -62,7 +62,7 @@ const CO2App = {
         });
     },
     
-    // Smooth Scrolling für interne Links
+    // Sanftes Scrollen für interne Links
     setupSmoothScrolling() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -78,7 +78,7 @@ const CO2App = {
         });
     },
     
-    // RTL/LTR Direction Support initialisieren
+    // RTL/LTR Richtungsunterstützung initialisieren
     initializeDirectionSupport() {
         const userLanguage = navigator.language || navigator.userLanguage;
         const rtlLanguages = ['ar', 'he', 'ur', 'fa', 'ps', 'sd'];
@@ -89,7 +89,7 @@ const CO2App = {
         }
     },
     
-    // CO2-Daten von JSON-Datei laden
+    // CO2-Daten aus JSON-Datei laden
     async loadCO2Data() {
         try {
             this.showLoading(true);
@@ -113,7 +113,7 @@ const CO2App = {
         }
     },
     
-    // Filter-Dropdown Optionen füllen
+    // Filter-Dropdown-Optionen füllen
     populateFilterOptions() {
         const countries = [...new Set(this.data.map(item => item.country))].sort();
         const companies = [...new Set(this.data.map(item => item.company).filter(Boolean))].sort();
@@ -156,7 +156,7 @@ const CO2App = {
         this.renderTable();
     },
     
-    // Tabelle rendern
+    // Tabelle darstellen
     renderTable() {
         const tableBody = document.getElementById('tableBody');
         
@@ -184,7 +184,7 @@ const CO2App = {
         `).join('');
     },
     
-    // Loading State anzeigen/verstecken
+    // Ladezustand anzeigen/verstecken
     showLoading(isLoading) {
         const tableBody = document.getElementById('tableBody');
         const table = document.getElementById('co2Table');
@@ -221,19 +221,19 @@ const CO2App = {
         `;
     },
     
-    // Zahl formatieren (mit Tausender-Trenner)
+    // Zahl formatieren (mit Tausendertrennzeichen)
     formatNumber(num) {
         return new Intl.NumberFormat('de-DE').format(num);
     },
     
-    // XSS-Schutz: HTML escapen
+    // XSS-Schutz: HTML-Escape
     escapeHtml(text) {
         const div = document.createElement('div');
         div.textContent = text;
         return div.innerHTML;
     },
     
-    // Input Sanitization
+    // Eingabe bereinigen
     sanitizeInput(input) {
         if (typeof input !== 'string') return '';
         
@@ -244,7 +244,7 @@ const CO2App = {
     }
 };
 
-// RTL/LTR Direction Toggle (Globale Funktion)
+// RTL/LTR Richtungsumschaltung (Globale Funktion)
 function setDirection(direction) {
     const html = document.documentElement;
     const currentDir = html.getAttribute('dir');
@@ -272,10 +272,10 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
             .then(registration => {
-                console.log('SW registriert:', registration);
+                console.log('Service Worker registriert:', registration);
             })
             .catch(error => {
-                console.log('SW Registrierung fehlgeschlagen:', error);
+                console.log('Service Worker Registrierung fehlgeschlagen:', error);
             });
     });
 } 
