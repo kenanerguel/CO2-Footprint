@@ -1,0 +1,17 @@
+{
+  "name": "co2-footprint-webapp",
+  "version": "1.0.0",
+  "description": "Webseite für CO2-Emissionsdaten",
+  "scripts": {
+    "dev": "live-server --port=3000"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/CO2-Footprint.git"
+  },
+  "author": "Your Name",
+  "license": "MIT"
+} 

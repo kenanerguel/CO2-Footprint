@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CO2-Emissionsdaten von Ländern und Unternehmen">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    
+    <title>CO2-Footprint | Emissionsdaten</title>
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#home">
+                    <img src="assets/logo.svg" alt="CO2-Footprint Logo" width="30" height="30" class="me-2">
+                    <span>CO2-Footprint</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="navbar-nav-desktop">
+                    <a class="nav-link active" href="#home">Home</a>
+                    <a class="nav-link" href="#data">CO2-Daten</a>
+                    <a class="nav-link" href="#about">Über uns</a>
+                    <a class="nav-link" href="javascript:void(0)" onclick="toggleDirection()">Layout</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+                
+                <!-- Mobile Navigation -->
+                <div class="mobile-nav" id="mobileNav">
+                    <a class="mobile-nav-link" href="#home" onclick="closeMobileMenu()">Home</a>
+                    <a class="mobile-nav-link" href="#data" onclick="closeMobileMenu()">CO2-Daten</a>
+                    <a class="mobile-nav-link" href="#about" onclick="closeMobileMenu()">Über uns</a>
+                    <a class="mobile-nav-link" href="javascript:void(0)" onclick="toggleDirection(); closeMobileMenu();">Layout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="bg-light py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h1 class="display-4 fw-bold text-success mb-4">CO2-Emissionsdaten</h1>
+                        <p class="lead mb-4">Emissionsdaten von Ländern und Unternehmen.</p>
+                        <a href="#data" class="btn btn-success btn-lg">Daten anzeigen</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="data" style="padding: 3rem 0;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+                <h2 style="text-align: center !important; width: 100% !important; display: block !important; margin: 0 auto 1.5rem auto !important; padding: 0 !important; font-size: 2rem !important; color: #333 !important;">Emissionsdaten</h2>
+                
+                <!-- Hinweis auf fiktive Daten -->
+                <div class="alert alert-info text-center mb-4" role="alert">
+                    <i class="bi bi-info-circle"></i>
+                    <strong>Hinweis:</strong> Alle dargestellten CO2-Emissionsdaten sind zu Demonstrationszwecken fiktiv erstellt und entsprechen nicht realen Werten.
+                </div>
+                
+                <div class="data-content">
+                    <div class="main-content">
+                        <div class="row mb-4">
+                    <div class="col-md-4">
+                        <select class="form-select" id="countryFilter">
+                            <option value="">Alle Länder</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-select" id="companyFilter">
+                            <option value="">Alle Unternehmen</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="searchInput" placeholder="Suchen...">
+                    </div>
+                </div>
+                
+                <!-- Desktop Table View -->
+                <div class="table-responsive">
+                    <table class="table table-striped table-hover" id="co2Table">
+                        <thead class="table-success">
+                            <tr>
+                                <th scope="col" class="sortable" data-sort="country">
+                                    Land <i class="sort-icon"></i>
+                                </th>
+                                <th scope="col" class="sortable" data-sort="company">
+                                    Unternehmen <i class="sort-icon"></i>
+                                </th>
+                                <th scope="col" class="sortable" data-sort="emissions">
+                                    CO2-Emissionen (Tonnen) <i class="sort-icon"></i>
+                                </th>
+                                <th scope="col" class="sortable" data-sort="year">
+                                    Jahr <i class="sort-icon"></i>
+                                </th>
+                                <th scope="col" class="sortable" data-sort="sector">
+                                    Sektor <i class="sort-icon"></i>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <tr>
+                                <td colspan="5" class="text-center">
+                                    <div class="spinner-border text-success" role="status">
+                                        <span class="visually-hidden">Lade Daten...</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Mobile Card View -->
+                <div class="mobile-view" id="mobileView">
+                    <div class="text-center">
+                        <div class="spinner-border text-success" role="status">
+                            <span class="visually-hidden">Lade Daten...</span>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="bg-light py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h2>Über uns</h2>
+                        <p class="lead">Wir sind ein innovatives Team von Umweltwissenschaftlern und Datenanalysten, das sich der Transparenz bei CO2-Emissionen verschrieben hat.</p>
+                        
+                        <div class="row mt-5">
+                            <div class="col-md-4 mb-4">
+                                <div class="about-card">
+                                    <div class="about-icon">🌍</div>
+                                    <h4>Unsere Mission</h4>
+                                    <p>Wir schaffen Transparenz über CO2-Emissionen von Unternehmen und Ländern weltweit, um fundierte Klimaentscheidungen zu ermöglichen.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="about-card">
+                                    <div class="about-icon">📊</div>
+                                    <h4>Unsere Daten</h4>
+                                    <p>Durch präzise Datenerfassung und -analyse bieten wir verlässliche Einblicke in globale Emissionstrends und -muster.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="about-card">
+                                    <div class="about-icon">🤝</div>
+                                    <h4>Unser Team</h4>
+                                    <p>Ein interdisziplinäres Team aus 15 Experten arbeitet täglich daran, Klimadaten verständlich und zugänglich zu machen.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <p><strong>Gegründet:</strong> 2019 in Berlin</p>
+                            <p><strong>Partner:</strong> Über 200 Unternehmen und 45 Länder vertrauen auf unsere Analysen</p>
+                        </div>
+                        
+                        <p class="text-muted mt-4"><small><strong>Hinweis:</strong> Alle auf dieser Demo-Seite dargestellten Daten sind fiktiv und zu Demonstrationszwecken erstellt. Sie entsprechen nicht realen CO2-Emissionswerten.</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rechtliche Seiten -->
+        <section id="impressum" class="py-5" style="display: none;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2>Impressum</h2>
+                        <h4>Angaben gemäß § 5 TMG</h4>
+                        <p>
+                            <strong>CO2-Footprint GmbH</strong><br>
+                            Umweltstraße 42<br>
+                            10115 Berlin<br>
+                            Deutschland
+                        </p>
+                        
+                        <h4>Vertreten durch:</h4>
+                        <p>Geschäftsführerin: Dr. Maria Klimaschutz</p>
+                        
+                        <h4>Kontakt:</h4>
+                        <p>
+                            Telefon: +49 (0) 30 123456789<br>
+                            E-Mail: info@co2-footprint.de<br>
+                            Website: www.co2-footprint.de
+                        </p>
+                        
+                        <h4>Registereintrag:</h4>
+                        <p>
+                            Eintragung im Handelsregister<br>
+                            Registergericht: Amtsgericht Berlin<br>
+                            Registernummer: HRB 98765
+                        </p>
+                        
+                        <h4>Umsatzsteuer-ID:</h4>
+                        <p>Umsatzsteuer-Identifikationsnummer gemäß §27a UStG: DE123456789</p>
+                        
+                        <button class="btn btn-secondary mt-3" onclick="document.querySelectorAll('section').forEach(s => s.style.display='block'); document.querySelectorAll('#impressum, #datenschutz, #nutzungsbedingungen').forEach(s => s.style.display='none'); window.scrollTo(0,0);">Zurück</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="datenschutz" class="py-5" style="display: none;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2>Datenschutzerklärung</h2>
+                        
+                        <h4>1. Datenschutz auf einen Blick</h4>
+                        <h5>Allgemeine Hinweise</h5>
+                        <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen.</p>
+                        
+                        <h5>Datenerfassung auf unserer Website</h5>
+                        <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong></p>
+                        <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
+                        
+                        <h4>2. Hosting und Content Delivery Networks (CDN)</h4>
+                        <h5>Externes Hosting</h5>
+                        <p>Diese Website wird bei einem externen Dienstleister gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert.</p>
+                        
+                        <h4>3. Allgemeine Hinweise und Pflichtinformationen</h4>
+                        <h5>Datenschutz</h5>
+                        <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+                        
+                        <h5>Hinweis zur verantwortlichen Stelle</h5>
+                        <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+                        <p>
+                            CO2-Footprint GmbH<br>
+                            Dr. Maria Klimaschutz<br>
+                            Umweltstraße 42<br>
+                            10115 Berlin<br>
+                            E-Mail: datenschutz@co2-footprint.de
+                        </p>
+                        
+                        <button class="btn btn-secondary mt-3" onclick="document.querySelectorAll('section').forEach(s => s.style.display='block'); document.querySelectorAll('#impressum, #datenschutz, #nutzungsbedingungen').forEach(s => s.style.display='none'); window.scrollTo(0,0);">Zurück</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nutzungsbedingungen" class="py-5" style="display: none;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2>Nutzungsbedingungen</h2>
+                        
+                        <h4>1. Geltungsbereich</h4>
+                        <p>Diese Nutzungsbedingungen gelten für die Nutzung der Website co2-footprint.de und der darauf angebotenen Dienste.</p>
+                        
+                        <h4>2. Nutzung der Website</h4>
+                        <p>Die Nutzung dieser Website ist kostenlos. Sie dient ausschließlich zu Informationszwecken über CO2-Emissionsdaten von Ländern und Unternehmen.</p>
+                        
+                        <h4>3. Urheberrecht</h4>
+                        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+                        
+                        <h4>4. Haftungsausschluss</h4>
+                        <h5>Haftung für Inhalte</h5>
+                        <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht unter der Verpflichtung, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+                        
+                        <h5>Haftung für Links</h5>
+                        <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen.</p>
+                        
+                        <h4>5. Änderungen der Nutzungsbedingungen</h4>
+                        <p>Wir behalten uns vor, diese Nutzungsbedingungen jederzeit ohne Nennung von Gründen zu ändern. Die jeweils aktuelle Fassung finden Sie auf dieser Seite.</p>
+                        
+                        <h4>6. Schlussbestimmungen</h4>
+                        <p>Es gilt deutsches Recht. Sollten einzelne Bestimmungen dieser Nutzungsbedingungen unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</p>
+                        
+                        <button class="btn btn-secondary mt-3" onclick="document.querySelectorAll('section').forEach(s => s.style.display='block'); document.querySelectorAll('#impressum, #datenschutz, #nutzungsbedingungen').forEach(s => s.style.display='none'); window.scrollTo(0,0);">Zurück</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>CO2-Footprint</h5>
+                    <p class="small">Emissionsdaten</p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Rechtliche Hinweise</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#impressum" class="text-light" onclick="document.querySelectorAll('section').forEach(s => s.style.display='none'); document.getElementById('impressum').style.display='block'; window.scrollTo(0,0); return false;">Impressum</a></li>
+                        <li><a href="#datenschutz" class="text-light" onclick="document.querySelectorAll('section:not(#datenschutz)').forEach(s => s.style.display='none'); document.getElementById('datenschutz').style.display='block'; return false;">Datenschutz</a></li>
+                        <li><a href="#nutzungsbedingungen" class="text-light" onclick="document.querySelectorAll('section:not(#nutzungsbedingungen)').forEach(s => s.style.display='none'); document.getElementById('nutzungsbedingungen').style.display='block'; return false;">Nutzungsbedingungen</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-3">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="small mb-0">&copy; 2024 CO2-Footprint</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=4"></script>
+</body>
+</html> 

@@ -1,0 +1,13 @@
+# Dependencies
+node_modules/
+# Editor
+.vscode/
+.cursor/
+# Builds
+dist/
+build/
+# System
+.DS_Store
+Thumbs.db
+# Env
+.env

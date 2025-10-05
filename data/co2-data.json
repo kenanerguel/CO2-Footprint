@@ -1,0 +1,322 @@
+[
+  {
+    "id": "de-2023-001",
+    "country": "Deutschland",
+    "company": null,
+    "emissions": 675000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Umweltbundesamt",
+    "verified": true
+  },
+  {
+    "id": "de-2023-002",
+    "country": "Deutschland",
+    "company": "Volkswagen AG",
+    "emissions": 12500000,
+    "year": 2023,
+    "sector": "Transport",
+    "source": "Nachhaltigkeitsbericht 2023",
+    "verified": true
+  },
+  {
+    "id": "de-2023-003",
+    "country": "Deutschland",
+    "company": "BASF SE",
+    "emissions": 18200000,
+    "year": 2023,
+    "sector": "Industrie",
+    "source": "Klimabericht 2023",
+    "verified": true
+  },
+  {
+    "id": "us-2023-001",
+    "country": "USA",
+    "company": null,
+    "emissions": 5100000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "EPA Environmental Report",
+    "verified": true
+  },
+  {
+    "id": "us-2023-002",
+    "country": "USA",
+    "company": "ExxonMobil",
+    "emissions": 120000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Corporate Sustainability Report",
+    "verified": true
+  },
+  {
+    "id": "us-2023-003",
+    "country": "USA",
+    "company": "General Motors",
+    "emissions": 34000000,
+    "year": 2023,
+    "sector": "Transport",
+    "source": "Sustainability Report 2023",
+    "verified": true
+  },
+  {
+    "id": "cn-2023-001",
+    "country": "China",
+    "company": null,
+    "emissions": 11200000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "National Development Commission",
+    "verified": true
+  },
+  {
+    "id": "cn-2023-002",
+    "country": "China",
+    "company": "Sinopec",
+    "emissions": 89000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Annual Environmental Report",
+    "verified": true
+  },
+  {
+    "id": "fr-2023-001",
+    "country": "Frankreich",
+    "company": null,
+    "emissions": 320000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Ministère de la Transition",
+    "verified": true
+  },
+  {
+    "id": "fr-2023-002",
+    "country": "Frankreich",
+    "company": "Total Energies",
+    "emissions": 46000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Climate Report 2023",
+    "verified": true
+  },
+  {
+    "id": "jp-2023-001",
+    "country": "Japan",
+    "company": null,
+    "emissions": 1080000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Ministry of Environment",
+    "verified": true
+  },
+  {
+    "id": "jp-2023-002",
+    "country": "Japan",
+    "company": "Toyota Motor",
+    "emissions": 8900000,
+    "year": 2023,
+    "sector": "Transport",
+    "source": "Environmental Report 2023",
+    "verified": true
+  },
+  {
+    "id": "br-2023-001",
+    "country": "Brasilien",
+    "company": null,
+    "emissions": 450000000,
+    "year": 2023,
+    "sector": "Landwirtschaft",
+    "source": "IBAMA",
+    "verified": true
+  },
+  {
+    "id": "br-2023-002",
+    "country": "Brasilien",
+    "company": "Petrobras",
+    "emissions": 67000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Sustainability Report",
+    "verified": true
+  },
+  {
+    "id": "in-2023-001",
+    "country": "Indien",
+    "company": null,
+    "emissions": 2650000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Central Pollution Control Board",
+    "verified": true
+  },
+  {
+    "id": "in-2023-002",
+    "country": "Indien",
+    "company": "Reliance Industries",
+    "emissions": 54000000,
+    "year": 2023,
+    "sector": "Industrie",
+    "source": "Annual Sustainability Report",
+    "verified": true
+  },
+  {
+    "id": "gb-2023-001",
+    "country": "Großbritannien",
+    "company": null,
+    "emissions": 340000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "DEFRA Climate Stats",
+    "verified": true
+  },
+  {
+    "id": "gb-2023-002",
+    "country": "Großbritannien",
+    "company": "BP plc",
+    "emissions": 41000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Sustainability Report 2023",
+    "verified": true
+  },
+  {
+    "id": "ca-2023-001",
+    "country": "Kanada",
+    "company": null,
+    "emissions": 560000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Environment Canada",
+    "verified": true
+  },
+  {
+    "id": "ca-2023-002",
+    "country": "Kanada",
+    "company": "Shopify Inc.",
+    "emissions": 45000,
+    "year": 2023,
+    "sector": "IT",
+    "source": "Impact Report 2023",
+    "verified": true
+  },
+  {
+    "id": "au-2023-001",
+    "country": "Australien",
+    "company": null,
+    "emissions": 430000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Department of Climate Change",
+    "verified": true
+  },
+  {
+    "id": "au-2023-002",
+    "country": "Australien",
+    "company": "BHP Group",
+    "emissions": 16800000,
+    "year": 2023,
+    "sector": "Bergbau",
+    "source": "Climate Report 2023",
+    "verified": true
+  },
+  {
+    "id": "de-2022-001",
+    "country": "Deutschland",
+    "company": "Mercedes-Benz Group",
+    "emissions": 11200000,
+    "year": 2022,
+    "sector": "Transport",
+    "source": "Nachhaltigkeitsbericht 2022",
+    "verified": true
+  },
+  {
+    "id": "de-2022-002",
+    "country": "Deutschland",
+    "company": "SAP SE",
+    "emissions": 189000,
+    "year": 2022,
+    "sector": "IT",
+    "source": "Integrated Report 2022",
+    "verified": true
+  },
+  {
+    "id": "us-2022-001",
+    "country": "USA",
+    "company": "Apple Inc.",
+    "emissions": 11500000,
+    "year": 2022,
+    "sector": "IT",
+    "source": "Environmental Progress Report",
+    "verified": true
+  },
+  {
+    "id": "us-2022-002",
+    "country": "USA",
+    "company": "Microsoft Corporation",
+    "emissions": 13800000,
+    "year": 2022,
+    "sector": "IT",
+    "source": "Sustainability Report 2022",
+    "verified": true
+  },
+  {
+    "id": "ch-2023-001",
+    "country": "Schweiz",
+    "company": null,
+    "emissions": 43000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "BAFU Klimastatistik",
+    "verified": true
+  },
+  {
+    "id": "ch-2023-002",
+    "country": "Schweiz",
+    "company": "Nestlé S.A.",
+    "emissions": 14200000,
+    "year": 2023,
+    "sector": "Lebensmittel",
+    "source": "CSV Report 2023",
+    "verified": true
+  },
+  {
+    "id": "nl-2023-001",
+    "country": "Niederlande",
+    "company": null,
+    "emissions": 150000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Rijksoverheid Climate Data",
+    "verified": true
+  },
+  {
+    "id": "nl-2023-002",
+    "country": "Niederlande",
+    "company": "Shell plc",
+    "emissions": 71000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Sustainability Report 2023",
+    "verified": true
+  },
+  {
+    "id": "se-2023-001",
+    "country": "Schweden",
+    "company": null,
+    "emissions": 48000000,
+    "year": 2023,
+    "sector": "Energie",
+    "source": "Naturvårdsverket",
+    "verified": true
+  },
+  {
+    "id": "se-2023-002",
+    "country": "Schweden",
+    "company": "Volvo Group",
+    "emissions": 3400000,
+    "year": 2023,
+    "sector": "Transport",
+    "source": "Annual Report 2023",
+    "verified": true
+  }
+] 
