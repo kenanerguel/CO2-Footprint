@@ -4,16 +4,16 @@ Webseite für CO2-Emissionsdaten von Ländern und Unternehmen.
 
 ## Screenshots
 
-### Desktop Ansicht
-![Desktop Screenshot](docs/screenshots/desktop-main.png)
-
 ### Mobile Ansicht
-![Mobile Screenshot](docs/screenshots/mobile-main.png)
+![Mobile Ansicht](docs/screenshots/mobile-main.png)
+
+### Desktop Ansicht
+![Desktop Ansicht](docs/screenshots/desktop-main.png)
 
 ## Installation
 
 ```bash
-git clone [REPOSITORY_URL]
+git clone https://github.com/kenanerguel/CO2-Footprint.git
 cd CO2-Footprint
 npx live-server --port=3000
 ```
