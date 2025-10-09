@@ -1,6 +1,6 @@
 # CO2-Footprint
 
-Interaktive Übersicht (fiktiver) CO₂‑Emissionsdaten von Ländern und Unternehmen – bewusst leichtgewichtiger Vanilla‑Stack.
+Interaktive Übersicht (fiktiver) CO₂‑Emissionsdaten von Ländern und Unternehmen – bewusst leichtgewichtiger Vanilla‑Stack. Die Seite visualisiert Trends, erlaubt den direkten Vergleich und bietet schnelle Filter/Suche für eine präzise Exploration der Daten. Der Fokus liegt auf verständlichem, wartbarem Code ohne Build‑Tooling, damit Inhalte leicht nachvollziehbar und erweiterbar bleiben. Ideal für Lehrzwecke, Demos und schlanke Prototypen.
 
 ## Hauptfunktionen
 
