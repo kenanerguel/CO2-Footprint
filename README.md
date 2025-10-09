@@ -4,11 +4,11 @@ Webseite für CO2-Emissionsdaten von Ländern und Unternehmen.
 
 ## Screenshots
 
-### Mobile Ansicht
-![Mobile Ansicht](docs/screenshots/mobile-main.png)
-
 ### Desktop Ansicht
-![Desktop Ansicht](docs/screenshots/desktop-main.png)
+![Desktop Ansicht](docs/screenshots/desktop-ansicht.png)
+
+### Mobile Ansicht
+![Mobile Ansicht](docs/screenshots/mobile-ansicht.png)
 
 ## Installation
 
